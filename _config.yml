@@ -1,0 +1,27 @@
+# Site settings
+title: Site Title
+description: Site Description
+baseurl: ""
+ga-token: 
+url: "https://.com"
+timezone: America/Winnipeg
+
+# Build settings
+markdown: kramdown
+source: _src
+include: [_pages]
+exclude: ["Makefile","Gemfile","Gemfile.lock","package.json","yarn.lock","node_modules/","README.md"]
+
+sass:
+  sourcemap: true
+  load_paths:
+    - vendor
+
+plugins:
+  - jekyll-assets
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

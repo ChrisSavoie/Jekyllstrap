@@ -1,0 +1,24 @@
+# OS Junk
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+
+# Jekyll Junk
+_site
+_staging*
+.jekyll-metadata
+.asset-cache
+
+# SASS Junk
+.sass_cache
+.sass-cache
+*.css.map
+
+# NPM Junk
+node_modules
+.npm
+
+# Ruby junk
+.bundle
+vendor/*

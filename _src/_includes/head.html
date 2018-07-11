@@ -1,0 +1,22 @@
+<head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+  <title>{% if page.title %}{{ page.title | strip_html | escape | append: ' | ' | append: site.title }}{% else %}{{ site.title | strip_html | escape | append: ' | ' | append: site.title }}{% endif %}</title>
+
+  {% include trackers.html %} <!-- Google Tag Manager -->
+  {% include meta.html %} <!-- Description / Search Engine / Schema.org / Twitter / Open Graph -->
+
+  <!-- Favicons -->
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"> -->
+  <!-- <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"> -->
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#DE3626"> -->
+  <!-- <meta name="theme-color" content="#DE3626"> -->
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+</head>

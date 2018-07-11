@@ -1,0 +1,43 @@
+{% if page.allow-indexing == false %}
+<meta name="robots" content="noindex" />
+{% endif %}
+
+{% if page.excerpt %}
+  {{ assign description = page.excerpt | strip_html | strip_newlines | truncate: 160 }}
+{% elsif page.description %}
+  {{ assign description = page.description | strip_html | strip_newlines | truncate: 160 }}
+{% else %}
+  {{ assign description = site.description | strip_html | strip_newlines | truncate: 160 }}
+{% endif %}
+
+{% if page.banner %}
+  {{ assign banner = page.banner | prepend: site.baseurl | prepend: site.url | replace: 'http://localhost:4000', '' }}
+{% else %}
+  {{ assign banner = site.banner | prepend: site.baseurl | prepend: site.url | replace: 'http://localhost:4000', '' }}
+{% endif %}
+
+<!-- Search Engine -->
+<meta name="description" content="{{ description }}" />
+<meta name="image" content="{{ banner }}" />
+
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="{% if page.title %}{{ page.title | strip_html }}{% else %}{{ site.title | strip_html | escape | append: ' | ' append: site.title }}{% endif %}">
+<meta itemprop="description" content="{{ description }}" />
+<meta itemprop="image" content="{{ banner }}" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@bold_commerce">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title | strip_html }}{% else %}{{ site.title | strip_html | escape | append: ' | ' append: site.title }}{% endif %}">
+<meta name="twitter:description" content="{{ description }}" />
+<meta name="twitter:image:src" content="{{ banner }}" />
+
+<!-- Open Graph (Facebook, Pinterest & Google+) -->
+<meta property="og:title" content="{% if page.title %}{{ page.title | strip_html }}{% else %}{{ site.title | strip_html | escape | append: ' | ' append: site.title }}{% endif %}">
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:image" content="{{ banner }}" />
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | replace: 'http://localhost:4000', '' }}">
+<meta property="og:site_name" content="{% if page.title %}{{ page.title | strip_html }}{% else %}{{ site.title | strip_html | escape | append: ' | ' append: site.title }}{% endif %}">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="fb:admins" content="237245333039484">

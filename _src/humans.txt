@@ -1,0 +1,13 @@
+/* TEAM */
+Original Developer: Chris Savoie
+E-mail: chrissavoie@gmail.com
+Twitter: @chrissavoie
+Github: @chrissavoie
+
+/* THANKS */
+We should all be thankful.
+
+/* SITE */
+Last update: {{ site.time | date: '%F' }}
+Standards: HTML5, CSS3
+Components: jQuery, Jekyll, Bootstrap4, Node, FontAwesome
